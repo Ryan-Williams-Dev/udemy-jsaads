@@ -1,19 +1,19 @@
-function sameFrequency(int1, int2) {
-  const str1 = int1.toString();
-  const str2 = int2.toString();
+function sameFrequency(num1, num2) {
+  num1 = num1.toString();
+  num2 = num2.toString();
 
-  if (str1.length !== str2.length) {
+  if (num1.length !== num2.length) {
     return false;
   }
 
   const digits = {};
 
-  for (const char of str1) {
+  for (const char of num1) {
     digits[char] = digits[char] ? digits[char] + 1 : 1;
   }
   
-  for (let i = 0; i < str2.length; i++) {
-    let digit = str2[i];
+  for (let i = 0; i < num2.length; i++) {
+    let digit = num2[i];
     if(!digits[digit]) {
       return false;
     } else {
