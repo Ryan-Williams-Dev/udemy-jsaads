@@ -6,19 +6,18 @@ function sameFrequency(int1, int2) {
     return false;
   }
 
-  const digits1 = {};
-  const digits2 = {};
+  const digits = {};
 
   for (const char of str1) {
-    digits1[char] = digits1[char] ? digits1[char] + 1 : 1;
+    digits[char] = digits[char] ? digits[char] + 1 : 1;
   }
-  for (const char of str2) {
-    digits2[char] = digits2[char] ? digits2[char] + 1 : 1;
-  }
-
-  for(const char in digits1) {
-    if (digits1[char] !== digits2[char]) {
+  
+  for (let i = 0; i < str2.length; i++) {
+    let digit = str2[i];
+    if(!digits[digit]) {
       return false;
+    } else {
+      digits[digit] -= 1; 
     }
   }
 
