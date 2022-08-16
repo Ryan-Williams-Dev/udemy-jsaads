@@ -8,18 +8,10 @@ function validAnagram(s1, s2){
   const s2Letters = {};
 
   for (const char of s1) {
-    if (s1Letters[char]) {
-      s1Letters[char] += 1;
-    } else {
-      s1Letters[char] = 1;
-    }
+    s1Letters[char] = (s1Letters[char] || 0) + 1;
   }
   for (const char of s2) {
-    if (s2Letters[char]) {
-      s2Letters[char] += 1;
-    } else {
-      s2Letters[char] = 1;
-    }
+    s2Letters[char] = (s2Letters[char] || 0) + 1;
   }
 
   for(const char in s1Letters) {
