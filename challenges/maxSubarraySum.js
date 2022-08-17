@@ -8,17 +8,19 @@ function maxSubarraySum(arr, length) {
   }
   let max = curr
   
-  let start = 1;
-  let end = start + (length - 1);
-
-  while (end < arr.length) {
-    curr -= arr[start - 1]
-    curr += arr[end]
-    if (curr > max) max = curr;
-
-    start++;
-    end++;
+  for (let i = length; i < arr.length; i++) {
+    curr = curr += arr[i] - arr[i - length];
+    max = Math.max(curr, max)
   }
+
+  // while (end < arr.length) {
+  //   curr -= arr[start - 1]
+  //   curr += arr[end]
+  //   if (curr > max) max = curr;
+
+  //   start++;
+  //   end++;
+  // }
 
   return max;
 }
