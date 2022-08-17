@@ -1,8 +1,8 @@
 function minSubArrayLen(arr, target) {
   let minWindow = Infinity;
   let start = 0;
-  let end = 1;
-  let total = arr[0] + arr[1];
+  let end = 0;
+  let total = 0
 
   while (start < arr.length) {
     if (total < target && end < arr.length) {
