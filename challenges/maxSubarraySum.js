@@ -13,15 +13,6 @@ function maxSubarraySum(arr, length) {
     max = Math.max(curr, max)
   }
 
-  // while (end < arr.length) {
-  //   curr -= arr[start - 1]
-  //   curr += arr[end]
-  //   if (curr > max) max = curr;
-
-  //   start++;
-  //   end++;
-  // }
-
   return max;
 }
 
