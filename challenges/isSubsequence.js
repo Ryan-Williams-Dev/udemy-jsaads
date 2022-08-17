@@ -3,6 +3,7 @@ function isSubsequence(subSeq, str) {
   let j = 0;
 
   if (!subSeq) return true;
+  
   while (j < str.length) {
     if (str[j] === subSeq[i]) i++;
     if (i === subSeq.length) return true;
