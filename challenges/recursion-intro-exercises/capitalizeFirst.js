@@ -3,9 +3,7 @@ function capitalizeFirst (arr) {
 
   if (arr.length <= 0) return newArr;
 
-  const wordCapped = arr[0][0].toUpperCase() + arr[0].slice(1);
-
-  newArr.push(wordCapped)
+  newArr.push(arr[0][0].toUpperCase() + arr[0].slice(1))
 
   return newArr.concat(capitalizeFirst(arr.slice(1)));
 }
