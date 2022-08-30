@@ -16,4 +16,4 @@ function merge(arr1, arr2) {
   return result.concat(i < arr1.length ? arr1.slice(i) : arr2.slice(j));
 }
 
-console.log(merge([1,10,50, 200, 650], [2,14,99,100, 1000, 5000, 3000, 7000, 6505]))
+console.log(merge([1,10,50, 200, 650], [2,14,99,100, 1000, 5000, 7000, 7000, 65056]))
