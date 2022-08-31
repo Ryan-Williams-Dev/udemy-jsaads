@@ -14,6 +14,23 @@ function pivot(arr, start = 0, end = arr.length - 1) {
   return pivotIndex;
 }
 
+
+
+function quickSort(arr, start = 0, end = arr.length - 1) {
+  if (end - start < 2) {
+    return arr;
+  }
+
+  let pivotIndex = pivot(arr, start, end)
+
+  quickSort(arr, start, pivotIndex)
+  quickSort(arr, pivotIndex + 1, end)
+
+  return arr;
+}
+
+
+
 let arr = [5,2,1,8,4,7,6,3]
 
-console.log(pivot(arr))
+console.log(quickSort(arr))
