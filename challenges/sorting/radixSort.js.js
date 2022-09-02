@@ -29,13 +29,7 @@ function radixSort(nums) {
       buckets[digit].push(num);
     }
 
-    nums = []
-
-    for (const arr of buckets) {
-      for (const num of arr) {
-        nums.push(num) 
-      }
-    }
+    nums = [].concat(...buckets)
   }
 
   return nums;
