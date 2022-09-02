@@ -14,10 +14,8 @@ function pivot(arr, start = 0, end = arr.length - 1) {
   return pivotIndex;
 }
 
-
-
 function quickSort(arr, start = 0, end = arr.length - 1) {
-  if (end - start < 2) {
+  if (end <= start) {
     return arr;
   }
 
@@ -28,8 +26,6 @@ function quickSort(arr, start = 0, end = arr.length - 1) {
 
   return arr;
 }
-
-
 
 let arr = [5,2,1,8,4,7,6,3]
 
