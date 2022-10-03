@@ -46,8 +46,19 @@ class SingleLinkedList {
     } 
     return curr;
   }
-}
 
+  shift() {
+    if (!this.head) return undefined;
+    let removedHead = this.head;
+    this.head = removedHead.next;
+    this.length--;
+    if (this.length === 0) {
+      this.tail = null;
+    }
+    return removedHead;
+  }
+}
+ 
 let list = new SingleLinkedList()
 list.push("Hello")
 list.push("Goodbye")
