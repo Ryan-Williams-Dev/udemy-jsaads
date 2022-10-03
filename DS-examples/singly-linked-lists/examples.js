@@ -73,19 +73,30 @@ class SingleLinkedList {
     return this;
   }
 
-  get(num) {
-    if (num >= this.length || num < 0) {
+  get(index) {
+    if (index >= this.length || index < 0) {
       return undefined;
     }
 
     let curr = this.head;
     let count = 0;
-    while (count < num) {
+    while (count < index) {
       curr = curr.next;
       count++;
     }
 
     return curr;
+  }
+
+  set(index, val) {
+    let node = get(index);
+
+    if (node) {
+      node.val = val;
+      return true;
+    }
+
+    return false;
   }
 }
 
