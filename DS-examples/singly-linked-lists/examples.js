@@ -72,8 +72,23 @@ class SingleLinkedList {
 
     return this;
   }
+
+  get(num) {
+    if (num >= this.length || num < 0) {
+      return undefined;
+    }
+
+    let curr = this.head;
+    let count = 0;
+    while (count < num) {
+      curr = curr.next;
+      count++;
+    }
+
+    return curr;
+  }
 }
- 
+
 let list = new SingleLinkedList()
 list.push("Hello")
 list.push("Goodbye")
