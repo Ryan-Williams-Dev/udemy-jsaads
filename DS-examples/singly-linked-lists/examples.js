@@ -98,6 +98,23 @@ class SingleLinkedList {
 
     return false;
   }
+
+  insert(index, val) {
+    if (index < 0 || index > this.length) return false;
+    if (index === this.length) {
+      this.push(val);
+      return true;
+    }
+
+
+    let before = get(index - 1);
+    let after = before.next;
+    let newNode = new Node(val)
+
+    before.next = newNode;
+    newNode.next = after;
+    this.length++;
+  }
 }
 
 let list = new SingleLinkedList()
