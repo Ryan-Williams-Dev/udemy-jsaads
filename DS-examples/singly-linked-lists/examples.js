@@ -89,7 +89,7 @@ class SingleLinkedList {
   }
 
   set(index, val) {
-    let node = get(index);
+    let node = this.get(index);
 
     if (node) {
       node.val = val;
@@ -105,15 +105,34 @@ class SingleLinkedList {
       this.push(val);
       return true;
     }
+    if (index = 0) {
+      this.unshift(val);
+      return true;
+    }
 
 
-    let before = get(index - 1);
+    let before = this.get(index - 1);
+    console.log(before)
     let after = before.next;
     let newNode = new Node(val)
 
     before.next = newNode;
     newNode.next = after;
     this.length++;
+    return true;
+  }
+
+  remove(index) {
+    if (index < 0 || index >= this.length) return null;
+    if (index === this.length - 1) return this.pop();
+    if (index === 0) return this.shift();
+
+    let prev = this.get(index - 1)
+    let target = prev.next;
+    prev.next = target.next;
+    this.length--;
+
+    return target;
   }
 }
 
@@ -123,6 +142,6 @@ list.push("Goodbye")
 list.push("Oh")
 list.push("wait")
 
-console.log (list.pop())
+list.insert(2, "OI")
 
 console.log(list)
